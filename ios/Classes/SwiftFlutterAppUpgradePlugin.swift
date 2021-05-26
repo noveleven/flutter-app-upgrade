@@ -18,7 +18,6 @@ public class SwiftFlutterAppUpgradePlugin: NSObject, FlutterPlugin {
           map["packageName"] = bundleIdentifier as! String
           map["versionName"] = majorVersion as! String
           map["versionCode"] = buildNumber as! String
-          map["version"] = "\(map["versionName"]).\(map["versionCode"])"
           result(map)
       }else if(call.method == "toAppStore"){
           let args = call.arguments as! Dictionary<String, String>
