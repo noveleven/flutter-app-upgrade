@@ -13,7 +13,7 @@ class FlutterUpgrade {
   static Future<AppInfo> get appInfo async {
     var result = await _channel.invokeMethod('getAppInfo');
     return AppInfo(
-        version: result['versionName'] + result['versionCode'],
+        version: "${result['versionName']}.${result['versionCode']}",
         versionName: result['versionName'],
         versionCode: result['versionCode'],
         packageName: result['packageName']);
