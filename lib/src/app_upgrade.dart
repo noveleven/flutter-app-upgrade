@@ -47,7 +47,7 @@ class AppUpgrade {
   ///
   /// `downloadStatusChange`：下载状态变化回调
   ///
-  static appUpgrade(
+  static Future<bool> appUpgrade(
     BuildContext context,
     Future<AppUpgradeInfo> future, {
     TextStyle titleStyle,
@@ -65,9 +65,10 @@ class AppUpgrade {
     VoidCallback onOk,
     DownloadProgressCallback downloadProgress,
     DownloadStatusChangeCallback downloadStatusChange,
-  }) {
-    future.then((AppUpgradeInfo appUpgradeInfo) {
-      if (appUpgradeInfo != null && appUpgradeInfo.title != null) {
+  }) async {
+    return future.then((AppUpgradeInfo appUpgradeInfo) {
+      bool upgrade = appUpgradeInfo != null && appUpgradeInfo.title != null;
+      if (upgrade) {
         _showUpgradeDialog(
             context, appUpgradeInfo.title, appUpgradeInfo.contents,
             apkDownloadUrl: appUpgradeInfo.apkDownloadUrl,
@@ -88,6 +89,7 @@ class AppUpgrade {
             downloadProgress: downloadProgress,
             downloadStatusChange: downloadStatusChange);
       }
+      return upgrade;
     }).catchError((onError) {
       print('$onError');
     });
