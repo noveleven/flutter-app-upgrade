@@ -131,30 +131,29 @@ class AppUpgrade {
                     borderRadius:
                         BorderRadius.all(Radius.circular(borderRadius))),
                 child: SimpleAppUpgradeWidget(
-                  title: title,
-                  titleStyle: titleStyle,
-                  contents: contents,
-                  contentStyle: contentStyle,
-                  cancelText: cancelText,
-                  cancelTextStyle: cancelTextStyle,
-                  okText: okText,
-                  okTextStyle: okTextStyle,
-                  okBackgroundColors: okBackgroundColors ??
-                      [
-                        Theme.of(context).primaryColor,
-                        Theme.of(context).primaryColor
-                      ],
-                  progressBarColor: progressBarColor,
-                  borderRadius: borderRadius,
-                  downloadUrl: apkDownloadUrl,
-                  force: force,
-                  iosAppId: iosAppId,
-                  appMarketInfo: appMarketInfo,
+                    title: title,
+                    titleStyle: titleStyle,
+                    contents: contents,
+                    contentStyle: contentStyle,
+                    cancelText: cancelText,
+                    cancelTextStyle: cancelTextStyle,
+                    okText: okText,
+                    okTextStyle: okTextStyle,
+                    okBackgroundColors: okBackgroundColors ??
+                        [
+                          Theme.of(context).primaryColor,
+                          Theme.of(context).primaryColor
+                        ],
+                    progressBarColor: progressBarColor,
+                    borderRadius: borderRadius,
+                    downloadUrl: apkDownloadUrl,
+                    force: force,
+                    iosAppId: iosAppId,
+                    appMarketInfo: appMarketInfo,
                     onCancel: onCancel,
                     onOk: onOk,
                     downloadProgress: downloadProgress,
-                    downloadStatusChange: downloadStatusChange
-                )),
+                    downloadStatusChange: downloadStatusChange)),
           );
         });
   }
@@ -162,7 +161,7 @@ class AppUpgrade {
 
 class AppInfo {
   AppInfo({this.versionName, this.versionCode, this.packageName});
-
+  String version;
   String versionName;
   String versionCode;
   String packageName;
