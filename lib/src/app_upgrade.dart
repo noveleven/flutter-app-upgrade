@@ -160,7 +160,7 @@ class AppUpgrade {
 }
 
 class AppInfo {
-  AppInfo({this.versionName, this.versionCode, this.packageName});
+  AppInfo({this.version, this.versionName, this.versionCode, this.packageName});
   String version;
   String versionName;
   String versionCode;
